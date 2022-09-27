@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyShoppingList</string>
+    <string name="listpro">Lista de Productos</string>
+    <string name="txtingresenombre" />
+    <string name="txtIngresar">Ingrese el producto a buscar</string>
+    <string name="txtIngresarPr">Buscar producto</string>
+</resources>
