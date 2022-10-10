@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
-               android:paddingStart="20dp">
+                android:paddingStart="20dp">
 
                 <TextView
                     android:id="@+id/txtNombre"
@@ -46,8 +46,8 @@
                     android:text="Frutas y verduras"
                     android:textColor="@color/black"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
         </LinearLayout>

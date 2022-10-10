@@ -3,6 +3,7 @@ package com.example.myshoppinglist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.collections.ArrayList
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("", it)
             startActivity(intent)
         }
+
     }
 
     /*fun mostrarPantalla(v: View){
