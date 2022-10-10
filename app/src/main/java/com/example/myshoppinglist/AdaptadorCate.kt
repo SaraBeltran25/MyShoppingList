@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class AdaptadorCate (private  val datoslist:ArrayList<listElement>)
     :RecyclerView.Adapter<AdaptadorCate.ViewHolderCat>(){
 
-    var onItemClick : ((listElement) -> Unit)? = null
+
 
     class ViewHolderCat(itemView: View): RecyclerView.ViewHolder(itemView){
         val imageView : ImageView = itemView.findViewById(R.id.imageView)
@@ -28,9 +28,6 @@ class AdaptadorCate (private  val datoslist:ArrayList<listElement>)
         holder.imageView.setImageResource(categoria.image)
         holder.txtNombre.text = categoria.Categoria
 
-        holder.itemView.setOnClickListener{
-            onItemClick?.invoke(categoria)
-        }
     }
 
     override fun getItemCount(): Int = datoslist.size
