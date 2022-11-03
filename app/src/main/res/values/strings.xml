@@ -4,4 +4,10 @@
     <string name="txtingresenombre" />
     <string name="txtIngresar">Ingrese el producto a buscar</string>
     <string name="txtIngresarPr">Buscar producto</string>
+    <string name="txtnompro">NombreProducto</string>
+    <string name="txtdes">Descripcion</string>
+    <string name="txtLista">MI LISTA DE COMPRAS</string>
+    <string name="edb">Buscar producto</string>
+    <string name="btnBus">busqueda</string>
+    <string name="edtebu">Texto buscar</string>
 </resources>

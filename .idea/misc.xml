@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/drawable/disearchview.xml" value="0.1" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/activity_agregar_productos.xml" value="0.192481884057971" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/activity_mostrar.xml" value="0.18" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/agregar_producto.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/lis_producto.xml" value="0.2384428223844282" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/list_elemet.xml" value="0.17142857142857143" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/layout/mostrar_producto.xml" value="0.203125" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1305" />
-        <entry key="..\:/Users/Sara/AndroidStudioProjects/MyShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1305" />
-      </map>
-    </option>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
