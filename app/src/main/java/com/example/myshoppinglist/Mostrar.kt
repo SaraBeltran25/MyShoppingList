@@ -1,50 +1,45 @@
 package com.example.myshoppinglist
 
 import android.content.Intent
-import android.graphics.Paint
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 
 class Mostrar : AppCompatActivity() {
     lateinit var recycler: RecyclerView
-    lateinit var db : MyShoppingList
-    lateinit var  categoria1: String
-    lateinit var txtNombre : TextView
-    lateinit var chkSub : CheckBox
-    lateinit var Buscar : EditText
-    lateinit var Nombreproducto : String
-    //lateinit var binding: ActivityMainBinding
 
+
+    companion object{
+        val p = ArrayList<listProducto>()
+    }
+
+    lateinit var db :MyShoppingList
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar)
+
+        p.add(listProducto(1,"coca", "2.5 retornable", "Bebidas"))
+        p.add(listProducto(2,"coca", "1.5 retornable", "Bebidas"))
+
+        val adapt = AdaptadorLiProducto(this, p)
+        recycler.adapter = adapt
+
+        //val categoria = intent.getParcelableExtra<listElement>("categoria")
+        //if (categoria != null) {
+        //    val textView: TextView = findViewById(R.id.txtNombre)
+        //    textView.text = categoria.Categoria
+       // }
+
         recycler = findViewById(R.id.rvListPro)
+
         db = this.application as MyShoppingList
 
-        Buscar = findViewById(R.id.edBuscar)
-
-        //txtNombre = findViewById(R.id.txtNombrePro)
-        //chkSub = findViewById(R.id.chkSub)
-
-        /*binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val userAdapter: ArrayAdapter<String> = ArrayAdapter(
-            this,android.R.layout.simple_list_item_1
-
-        )*/
-
-        /*supportActionBar?.hide()*/
 
     }
 
@@ -54,20 +49,16 @@ class Mostrar : AppCompatActivity() {
     }
     fun actualizarRecycler(){
         lifecycleScope.launch{
-            //val lista= db.room.ProductoDao().getAll()
-             categoria1= "Frutas y verduras"
-            val lista= db.room.ProductoDao().getByCategoria( categoria1)
-            Log.e("DATOS", "cantidad ${lista.size}")
+            val lista= db.room.ProductoDao().getAll()
             actualizarRecyclerDespues(lista)
         }
 
-        //suspend fun getAll(): List<listProducto>
     }
     fun actualizarRecyclerDespues(list: List<listProducto>){
         val adaptador = AdaptadorLiProducto(this, list)
-        recycler.layoutManager=LinearLayoutManager(this)
         recycler.adapter = adaptador
     }
+
 
     fun AgregarPantalla(v: View) {
         val intent = Intent(this, AgregarProductos::class.java)
@@ -75,24 +66,11 @@ class Mostrar : AppCompatActivity() {
     }
 
 
-
-    /*fun clickCheck(v:View){
-       if(chkSub.isChecked == true)
-           txtNombre.setPaintFlags(txtNombre.getPaintFlags() or Paint.UNDERLINE_TEXT_FLAG)
-       else
-            txtNombre.typeface = Typeface.DEFAULT
-
+    /*fun AgregarPantalla(v: View) {
+        val intent = Intent(this, AgregarProductos::class.java)
+        startActivity(intent)
     }*/
 
-
-    /*fun BuscarProducto(v: View){
-        //idDoctoor ="1234"
-        lifecycleScope.launch{
-            val lista= db.room.ProductoDao().getByNombreProducto (Nombreproducto)
-            actualizarRecyclerDespues(lista)
-
-        }
-    }*/
 
 
 }
