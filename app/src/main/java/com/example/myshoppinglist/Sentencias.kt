@@ -10,10 +10,15 @@ import androidx.room.Update
 interface Sentencias {
     @Query("SELECT * FROM listProducto")
     suspend fun getAll(): List<listProducto>
+    @Query("SELECT * FROM listProducto Where categoria In (:categoria)")
+    suspend fun getByCategoria(categoria:String): List<listProducto>
 
     @Update
     suspend fun update(product:listProducto)
 
     @Insert
     suspend fun insert(product:listProducto)
+
+    @Query("SELECT * FROM listProducto WHERE nombre IN (:Nombre)")
+    suspend fun getByNombreProducto(Nombre:String ): List<listProducto>
 }

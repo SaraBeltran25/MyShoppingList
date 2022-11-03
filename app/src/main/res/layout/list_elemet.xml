@@ -28,6 +28,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
+                android:contentDescription="imagenCategoria"
                 android:onClick="abrirMostra"
                 android:scaleType="fitXY"
                 android:src="@drawable/vegetables" />
@@ -42,7 +43,7 @@
                 android:paddingStart="20dp">
 
                 <TextView
-                    android:id="@+id/txtNombre"
+                    android:id="@+id/txtNombreCategoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="abrirMostra"

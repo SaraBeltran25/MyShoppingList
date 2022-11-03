@@ -8,8 +8,8 @@ data class listElement (val id:Int, val image:Int, val Categoria: String): Parce
         parcel.readInt(),
         parcel.readInt(),
         parcel.readString()!!
-    ) {
-    }
+    )
+
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)

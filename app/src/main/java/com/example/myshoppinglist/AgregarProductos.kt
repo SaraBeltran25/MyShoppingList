@@ -13,9 +13,9 @@ class AgregarProductos : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     lateinit var txtDescripcion: EditText
     lateinit var txtNombre: EditText
-    lateinit var txtId: EditText
     lateinit var SpCategoria: Spinner
     lateinit var db : MyShoppingList
+    lateinit var cate: String
     val Categoria = arrayOf("Frutas y verduras", "Carnes", "Articulos de limpieza",
         "Cereales, Pasta y Harina", "Bebidas")
 
@@ -25,7 +25,6 @@ class AgregarProductos : AppCompatActivity(), AdapterView.OnItemSelectedListener
         setContentView(R.layout.activity_agregar_productos)
         txtDescripcion = findViewById(R.id.edDescripcionP)
         txtNombre= findViewById(R.id.edNombreP)
-        txtId= findViewById(R.id.edId)
         SpCategoria= findViewById(R.id.spCategoria)
 
         db = this.application as MyShoppingList
@@ -42,16 +41,15 @@ class AgregarProductos : AppCompatActivity(), AdapterView.OnItemSelectedListener
     fun agregarProducto(v: View) {
 
         //Aqui agrego un producto a la base de datos
-        val id= txtId.text.toString()
         val Nombre= txtNombre.text.toString()
         val Descripcion = txtDescripcion.text.toString()
         val Categoria = SpCategoria.toString()
-        if(id.equals("") or Nombre.equals("") or Descripcion.equals("") or Categoria.equals("")){
+        if(Nombre.equals("") or Descripcion.equals("") or Categoria.equals("")){
             Toast.makeText(this, "Error complete todos los datos", Toast.LENGTH_LONG).show()
         }
         else {
             lifecycleScope.launch {
-                val prod = listProducto (0, Nombre, Descripcion, Categoria)
+                val prod = listProducto (0, Nombre, Descripcion, cate)
                 db.room.ProductoDao().insert(prod)
             }
             Toast.makeText(this, "Producto registrado", Toast.LENGTH_LONG).show()
@@ -62,7 +60,7 @@ class AgregarProductos : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         Log.e("SPINNER", "Se selecciono $p2")
-        val categoria: String = Categoria[p2]
+        cate = Categoria[p2]
 
     }
 
